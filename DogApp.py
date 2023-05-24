@@ -31,7 +31,7 @@ with col1:
     st.image(logo, width=200)
 
 with col2:
-    st.markdown('<h1 style="color:White;">Dog Breed classification model 🐶</h1>', unsafe_allow_html=True)
+    st.header('Dog Breed classification model 🐶')
 
 
 
