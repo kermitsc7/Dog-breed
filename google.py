@@ -1,2 +1,8 @@
-import wget
-wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1CCqE6FbnPmEjwVs6wWR4yqJ_WAVy-PKG' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1CCqE6FbnPmEjwVs6wWR4yqJ_WAVy-PKG" -O ResNext101_64x4d_PreTrained.pth && rm -rf /tmp/cookies.txt
+import gdown
+
+id = "1CCqE6FbnPmEjwVs6wWR4yqJ_WAVy-PKG"
+output = "./streamlit/ResNext101_64x4d_PreTrained.pth"
+gdown.download(id=id, output=output, quiet=False)
+
+
+    
