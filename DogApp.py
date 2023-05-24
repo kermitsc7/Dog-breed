@@ -4,6 +4,7 @@ import torch
 import torchvision
 import torch.nn as nn
 from PIL import Image
+from DownloadDrive import descarregar
 
 # Define model
 def initialize_model_resnext101_64x4d(num_classes):
@@ -23,6 +24,7 @@ st.set_page_config(
     layout="wide",
 )
 
+descarregar()
 
 col1, mid, col2 = st.columns([1,3,20])
 with col1:
