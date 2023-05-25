@@ -7,8 +7,8 @@ from PIL import Image
 from DownloadDrive import descarregar
 
 # Define model
-def initialize_model_resnext101_64x4d(num_classes):
-    model = torchvision.models.resnext101_64x4d()
+def initialize_model_resnext101_32x8d(num_classes):
+    model = torchvision.models.resnext101_32x8d()
     model.fc = nn.Linear(2048, num_classes)
     input_size = 224
 
@@ -56,7 +56,7 @@ def predict(image):
 
     model = initialize_model_resnext101_64x4d(120)
     device = torch.device('cpu')
-    model.load_state_dict(torch.load("./ResNext101_64x4d_PreTrained.pth", device))
+    model.load_state_dict(torch.load("./ResNext101_32x8d_PreTrained.pth", device))
     model.eval()
     
    
