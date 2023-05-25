@@ -54,7 +54,7 @@ def predict(image):
     """
     # carreguem el model
 
-    model = initialize_model_resnext101_64x4d(120)
+    model = initialize_model_resnext101_32x8d(120)
     device = torch.device('cpu')
     model.load_state_dict(torch.load("./ResNext101_32x8d_PreTrained.pth", device))
     model.eval()
