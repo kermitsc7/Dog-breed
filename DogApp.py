@@ -7,8 +7,8 @@ from PIL import Image
 from DownloadDrive import descarregar
 
 # Define model
-def initialize_model_resnext101_32x8d(num_classes):
-    model = torchvision.models.resnext101_32x8d()
+def initialize_model_resnext101_64x4d(num_classes):
+    model = torchvision.models.resnext101_64x4d()
     model.fc = nn.Linear(2048, num_classes)
     input_size = 224
 
@@ -33,8 +33,6 @@ with col1:
 with col2:
     st.header('Dog Breed classification model 🐶')
 
-
-
 st.markdown('<h2 style="color:gray;">The model classifies dog image into 120 different breeds</h2>', unsafe_allow_html=True)
 
 st.info("IMPORTANT! only upload images with .jpg extension", icon="ℹ️")
@@ -54,9 +52,9 @@ def predict(image):
     """
     # carreguem el model
 
-    model = initialize_model_resnext101_32x8d(120)
+    model = initialize_model_resnext101_64x4d(120)
     device = torch.device('cpu')
-    model.load_state_dict(torch.load("./ResNext101_32x8d_PreTrained.pth", device))
+    model.load_state_dict(torch.load("./ResNext101_64x4d_PreTrained.pth", device))
     model.eval()
     
    
